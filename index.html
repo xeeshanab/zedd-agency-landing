@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/sitelogo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web design, development and creative media. We build responsive websites, web apps and visual media to grow your brand.">
+    <title>Web Design, Development & Creative Media</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #2d2d2d;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 11px;
+            line-height: 1.2;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 35px;
+            margin-right: 8px;
+            position: relative;
+        }
+
+        .logo-shape {
+            width: 100%;
+            height: 100%;
+            background-color: #FF3D71;
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+        }
+
+        /* Logo image */
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-estimate {
+            background-color: #FF3D71;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+        }
+
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-left: 8px solid white;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3a3a3a 50%, #5a5a5a 50%);
+            padding: 140px 0 100px;
+            margin-top: 65px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            font-weight: bold;
+        }
+
+        .hero-text p {
+            font-size: 24px;
+            color: #ddd;
+            line-height: 1.3;
+        }
+
+        .hero-phone-container {
+            position: relative;
+            width: 450px;
+        }
+
+        .phone-mockup {
+            width: 220px;
+            height: 420px;
+            background: linear-gradient(180deg, #999 0%, #bbb 50%, #999 100%);
+            border-radius: 35px;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            padding: 18px;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 85%;
+            background-color: #a4c639;
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .android-robot {
+            width: 100px;
+            height: 120px;
+            background-color: white;
+            border-radius: 12px 12px 50% 50%;
+            position: relative;
+        }
+
+        .robot-antenna {
+            position: absolute;
+            width: 5px;
+            height: 28px;
+            background-color: white;
+            top: -18px;
+        }
+
+        .antenna-left {
+            left: 25px;
+            transform: rotate(-35deg);
+        }
+
+        .antenna-right {
+            right: 25px;
+            transform: rotate(35deg);
+        }
+
+        .robot-eye {
+            width: 10px;
+            height: 10px;
+            background-color: #a4c639;
+            border-radius: 50%;
+            position: absolute;
+            top: 28px;
+        }
+
+        .eye-left {
+            left: 28px;
+        }
+
+        .eye-right {
+            right: 28px;
+        }
+
+        .phone-home-button {
+            width: 40px;
+            height: 40px;
+            background-color: #6a6a6a;
+            border-radius: 50%;
+            margin: 12px auto 0;
+            border: 2px solid #555;
+        }
+
+        .floating-icons {
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .float-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            margin: 22px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .icon-camera {
+            background-color: #5dade2;
+        }
+
+        .icon-headphone {
+            background-color: #a4c639;
+        }
+
+        .icon-phone {
+            background-color: #4ecdc4;
+        }
+
+        .icon-refresh {
+            background-color: #a4c639;
+        }
+
+        .icon-globe {
+            background-color: #45b39d;
+        }
+
+        .icon-target {
+            background-color: #a4c639;
+        }
+
+        /* Android Development Title Section */
+        .android-title-section {
+            background-color: white;
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .main-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2d2d2d;
+            text-transform: uppercase;
+            display: inline-block;
+            border-bottom: 4px solid #2d2d2d;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+        }
+
+        .subtitle-text {
+            color: #666;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+        /* Android Apps Section */
+        .android-apps-section {
+            background-color: #f5f5f5;
+            padding: 70px 0;
+        }
+
+        .section-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .section-heading {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2d2d2d;
+            margin-bottom: 25px;
+        }
+
+        .section-paragraph {
+            color: #555;
+            line-height: 1.9;
+            font-size: 14px;
+            text-align: justify;
+        }
+
+        .content-visual {
+            flex: 1;
+            text-align: center;
+        }
+
+        .android-circle {
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, #a4c639 0%, #8fb831 100%);
+            border-radius: 50%;
+            position: relative;
+            display: inline-block;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .circle-robot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 200px;
+        }
+
+        .robot-head {
+            width: 100px;
+            height: 80px;
+            background-color: #7fa328;
+            border-radius: 12px 12px 0 0;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .robot-body {
+            width: 120px;
+            height: 100px;
+            background-color: #7fa328;
+            border-radius: 0 0 15px 15px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .small-icon {
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 8px;
+            position: absolute;
+        }
+
+        .icon-1 { top: 30px; left: 20px; }
+        .icon-2 { top: 80px; left: 40px; }
+        .icon-3 { top: 130px; left: 30px; }
+        .icon-4 { top: 30px; right: 20px; }
+        .icon-5 { top: 80px; right: 40px; }
+        .icon-6 { top: 130px; right: 30px; }
+
+        /* Custom Android Apps Section */
+        .custom-apps-section {
+            background-color: white;
+            padding: 70px 0;
+        }
+
+        .reverse-content {
+            flex-direction: row-reverse;
+        }
+
+        .android-figure {
+            width: 180px;
+            height: 220px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .figure-head {
+            width: 120px;
+            height: 140px;
+            background-color: #a4c639;
+            border-radius: 15px 15px 60% 60%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .figure-antenna {
+            position: absolute;
+            width: 6px;
+            height: 35px;
+            background-color: #a4c639;
+            top: -22px;
+        }
+
+        .fig-antenna-left {
+            left: 28px;
+            transform: rotate(-28deg);
+        }
+
+        .fig-antenna-right {
+            right: 28px;
+            transform: rotate(28deg);
+        }
+
+        .figure-eye {
+            width: 14px;
+            height: 14px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 45px;
+        }
+
+        .fig-eye-left {
+            left: 32px;
+        }
+
+        .fig-eye-right {
+            right: 32px;
+        }
+
+        .figure-arm {
+            width: 22px;
+            height: 85px;
+            background-color: #a4c639;
+            border-radius: 12px;
+            position: absolute;
+            top: 55px;
+        }
+
+        .arm-left {
+            left: 12px;
+        }
+
+        .arm-right {
+            right: 12px;
+        }
+
+        .figure-leg {
+            width: 28px;
+            height: 55px;
+            background-color: #a4c639;
+            border-radius: 0 0 18px 18px;
+            position: absolute;
+            bottom: -55px;
+        }
+
+        .leg-left {
+            left: 32px;
+        }
+
+        .leg-right {
+            right: 32px;
+        }
+
+        /* Hardware Section */
+        .hardware-section {
+            background-color: #f5f5f5;
+            padding: 70px 0;
+        }
+
+        .hardware-visual {
+            text-align: center;
+        }
+
+        .hardware-device {
+            width: 180px;
+            height: 300px;
+            background: linear-gradient(180deg, #666 0%, #888 50%, #666 100%);
+            border-radius: 30px;
+            display: inline-block;
+            padding: 15px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .device-screen {
+            width: 100%;
+            height: 220px;
+            background-color: white;
+            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen-content {
+            width: 80px;
+            height: 80px;
+            background-color: #ffa726;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .content-inner {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .device-speaker {
+            width: 60px;
+            height: 5px;
+            background-color: #FF3D71;
+            border-radius: 3px;
+            margin: 12px auto 8px;
+        }
+
+        .device-button {
+            width: 35px;
+            height: 35px;
+            background-color: #444;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 2px solid #333;
+        }
+
+        .side-indicators {
+            position: absolute;
+            right: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .indicator-bar {
+            width: 30px;
+            height: 70px;
+            background-color: #FF3D71;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        /* Process Section */
+        .process-section {
+            background-color: white;
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .process-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .process-card {
+            background-color: #fafafa;
+            padding: 35px 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .card-label {
+            font-size: 13px;
+            color: #2d2d2d;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            font-size: 15px;
+            color: #2d2d2d;
+            font-weight: bold;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .card-description {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            background-color: #f5f5f5;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .clients-intro {
+            color: #999;
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .clients-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Carousel for Clients */
+        .carousel {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .carousel-viewport {
+            overflow: hidden;
+            flex: 1;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.35s ease;
+            will-change: transform;
+        }
+        .carousel-slide {
+            flex: 0 0 calc(25% - 10px);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .client-logo {
+            font-size: 22px;
+            color: #bbb;
+            font-weight: bold;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            background: transparent;
+        }
+        .carousel-prev, .carousel-next {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: #ddd;
+            color: #666;
+            cursor: pointer;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:18px;
+        }
+        .carousel-prev svg, .carousel-next svg {
+            width: 18px;
+            height: 18px;
+            display:block;
+            fill: currentColor;
+        }
+        .carousel-prev:disabled, .carousel-next:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+        @media (max-width: 968px) {
+            .carousel-slide { flex: 0 0 calc(50% - 10px); }
+        }
+
+        .cta-icon svg {
+            width: 28px;
+            height: 28px;
+            display:block;
+            fill: currentColor;
+        }
+
+        .cta-arrow svg {
+            width: 14px;
+            height: 14px;
+            display:block;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        @media (max-width: 600px) {
+            .carousel-slide { flex: 0 0 100%; }
+        }
+
+        .client-logo {
+            font-size: 22px;
+            color: #bbb;
+            font-weight: bold;
+            opacity: 0.7;
+        }
+
+        .arrow-nav {
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #2d2d2d;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 25px;
+            border: 2px solid white;
+            color: white;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .cta-icon {
+            font-size: 28px;
+        }
+
+        .cta-content {
+            text-align: left;
+        }
+
+        .cta-top-text {
+            font-size: 15px;
+            color: white;
+        }
+
+        .cta-bottom-text {
+            font-size: 17px;
+            color: #FF3D71;
+            font-weight: bold;
+        }
+
+        .cta-arrow {
+            font-size: 22px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            color: #FF3D71;
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .footer-icon {
+            width: 45px;
+            height: 45px;
+            background-color: #FF3D71;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .footer-icon svg {
+            width: 22px;
+            height: 22px;
+            display: block;
+            fill: currentColor;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #ccc;
+        }
+
+        .footer-map {
+            width: 100%;
+            height: 200px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            background-image: 
+                repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, transparent 1px, transparent 20px),
+                repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0px, transparent 1px, transparent 20px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content,
+            .section-content {
+                flex-direction: column;
+            }
+
+            .floating-icons {
+                display: none;
+            }
+
+            .process-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="img/logo.png" alt="ZEDD Services" class="logo-img">
+                </div>
+                <span>WE DO<br>UI/UX & DEVELOPMENT</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#who">WHO WE ARE</a></li>
+                <li><a href="#what">WHAT WE DO</a></li>
+                <li><a href="#why">WHY WE DO</a></li>
+                <li><a href="#estimate" class="btn-estimate">GET QUOTE<div class="play-icon"></div></a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Web Design &amp;<br>Development</h1>
+                    <p>We build beautiful websites, web applications, and creative media that help your brand grow.</p>
+                </div>
+                <div class="hero-phone-container">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="android-robot">
+                                <div class="robot-antenna antenna-left"></div>
+                                <div class="robot-antenna antenna-right"></div>
+                                <div class="robot-eye eye-left"></div>
+                                <div class="robot-eye eye-right"></div>
+                            </div>
+                        </div>
+                        <div class="phone-home-button"></div>
+                    </div>
+                    <div class="floating-icons">
+                        <div class="float-icon icon-camera"></div>
+                        <div class="float-icon icon-headphone"></div>
+                        <div class="float-icon icon-phone"></div>
+                        <div class="float-icon icon-refresh"></div>
+                        <div class="float-icon icon-globe"></div>
+                        <div class="float-icon icon-target"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Android Development Title -->
+    <section class="android-title-section">
+        <div class="container">
+            <h2 class="main-title">Web Development</h2>
+            <p class="subtitle-text">We craft modern, responsive websites and web applications that engage users and drive results.</p>
+        </div>
+    </section>
+
+    <!-- Android Apps Section -->
+    <section class="android-apps-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-text">
+                    <h3 class="section-heading">WEB SOLUTIONS</h3>
+                    <p class="section-paragraph">Our web design and development services include responsive websites, web applications, e‑commerce platforms, and creative media production tailored to your brand and audience.</p>
+                </div>
+                <div class="content-visual">
+                    <div class="android-circle">
+                        <div class="circle-robot">
+                            <div class="robot-head"></div>
+                            <div class="robot-body"></div>
+                        </div>
+                        <div class="small-icon icon-1"></div>
+                        <div class="small-icon icon-2"></div>
+                        <div class="small-icon icon-3"></div>
+                        <div class="small-icon icon-4"></div>
+                        <div class="small-icon icon-5"></div>
+                        <div class="small-icon icon-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Android Apps Section -->
+    <section class="custom-apps-section">
+        <div class="container">
+            <div class="section-content reverse-content">
+                <div class="content-text">
+                    <h3 class="section-heading">CUSTOM WEB APPS</h3>
+                    <p class="section-paragraph">Breaking through the Android application development companies clutter DuLeaf stands proudly as an industry leader. We have had the privilege to work with some of the world's top brands and have been the ones to develop custom Android applications that have helped them to reach out to millions of their customers around the world.</p>
+                </div>
+                <div class="content-visual">
+                    <div class="android-figure">
+                        <div class="figure-head">
+                            <div class="figure-antenna fig-antenna-left"></div>
+                            <div class="figure-antenna fig-antenna-right"></div>
+                            <div class="figure-eye fig-eye-left"></div>
+                            <div class="figure-eye fig-eye-right"></div>
+                            <div class="figure-arm arm-left"></div>
+                            <div class="figure-arm arm-right"></div>
+                            <div class="figure-leg leg-left"></div>
+                            <div class="figure-leg leg-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware Section -->
+    <section class="hardware-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-text">
+                    <h3 class="section-heading">CUSTOM HARDWARE ACCELERATION</h3>
+                    <p class="section-paragraph">Android is a rather flexible application development platform that allows Android application developers to customize an application based on the hardware the application is being designed for. There is a high potential for Android application developers to manipulate the various capabilities of the platform to their advantage.</p>
+                </div>
+                <div class="hardware-visual">
+                    <div style="position: relative; display: inline-block;">
+                        <div class="hardware-device">
+                            <div class="device-screen">
+                                <div class="screen-content">
+                                    <div class="content-inner"></div>
+                                </div>
+                            </div>
+                            <div class="device-speaker"></div>
+                            <div class="device-button"></div>
+                        </div>
+                        <div class="side-indicators">
+                            <div class="indicator-bar"></div>
+                            <div class="indicator-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="main-title">Web Development Process</h2>
+            <div class="process-cards">
+                <div class="process-card">
+                    <div class="card-label">APP ROI STRATEGY</div>
+                    <div class="card-title">& PROPOSAL</div>
+                    <p class="card-description">We device a targeted ROI Strategy that is focused towards connecting with users & ensuring maximum downloads.</p>
+                </div>
+                <div class="process-card">
+                    <div class="card-label">DESIGN</div>
+                    <div class="card-title">PROTOTYPE</div>
+                    <p class="card-description">We device a targeted ROI Strategy that is focused towards connecting with users & ensuring maximum downloads.</p>
+                </div>
+                <div class="process-card">
+                    <div class="card-label">APP DEVELOPMENT</div>
+                    <div class="card-title">& QUALITY ASSURANCE</div>
+                    <p class="card-description">We device a targeted ROI Strategy that is focused towards connecting with users & ensuring maximum downloads.</p>
+                </div>
+                <div class="process-card">
+                    <div class="card-label">APP PUBLISHING</div>
+                    <div class="card-title">& MARKETING</div>
+                    <p class="card-description">We device a targeted ROI Strategy that is focused towards connecting with users & ensuring maximum downloads.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients-section">
+        <div class="container">
+            <p class="clients-intro">A snapshot of the clients we've led to success</p>
+            <div class="carousel">
+                <button class="carousel-prev" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M15.41 7.41L10.83 12l4.58 4.59L14 18l-6-6 6-6z"/></svg>
+                </button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><div class="client-logo">FHG</div></div>
+                        <div class="carousel-slide"><div class="client-logo">SUGARBAY</div></div>
+                        <div class="carousel-slide"><div class="client-logo">THE CHANCELLOR</div></div>
+                        <div class="carousel-slide"><div class="client-logo">Hana & Ismael</div></div>
+                        <div class="carousel-slide"><div class="client-logo">AK</div></div>
+                    </div>
+                </div>
+                <button class="carousel-next" aria-label="Next">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="estimate">
+        <div class="container">
+            <a href="#" class="cta-button">
+                <div class="cta-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5c0-1.1-.9-2-2-2zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+                </div>
+                <div class="cta-content">
+                    <div class="cta-top-text">REQUEST A</div>
+                    <div class="cta-bottom-text">FREE QUOTE TO GET STARTED</div>
+                </div>
+                <div class="cta-arrow">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M10 6l6 6-6 6"/></svg>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Our Address</h3>
+                    <div class="footer-item">
+                        <div class="footer-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                        </div>
+                        <div class="footer-text">
+                            No 206, 1st Floor, Wisma MPL,<br>
+                            Jalan Raja Chulan, 52000,<br>
+                            Kuala Lumpur
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="footer-item">
+                        <div class="footer-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <div class="footer-text">zeeshan.twh@gmail.com</div>
+                    </div>
+                    <div class="footer-item">
+                        <div class="footer-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.2 2.2z"/></svg>
+                        </div>
+                        <div class="footer-text">(+92) 318 113 4440</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Find Us</h3>
+                    <div class="footer-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7967.580036961161!2d101.70371378900704!3d3.1500196499680877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc378c1b516d97%3A0xc40880e2e0d3fc55!2sWisma%20New%20Asia!5e0!3m2!1sen!2s!4v1767334506918!5m2!1sen!2s" style="border:0;width:100%;height:100%;border-radius:0;display:block;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>©2025 ZEDD Services</p>
+                <div class="footer-links">
+                    <a href="#">DISCLAIMER</a>
+                    <a href="#">TERMS OF USE</a>
+                    <a href="#">PRIVACY POLICY</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
